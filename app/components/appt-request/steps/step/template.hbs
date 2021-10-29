@@ -1,1 +1,8 @@
-{{yield}}
+<li class="appt-request-step {{if this.isActiveStep "active"}} {{if this.isCompletedStep "completed"}}">
+  <div class="step-content">
+    {{@step.title}}
+    <div class="extra-data" {{on "click" (fn this.appointmentRequest.updateActiveStep @step.id)}}>
+      {{@step.extraData}}
+    </div>
+  </div>
+</li>

@@ -1,5 +1,5 @@
 import JSONAPIAdapter from '@ember-data/adapter/json-api';
-import ENV from 'simplepractice-assessment/config/environnment';
+import ENV from 'simplepractice-assessment/config/environment';
 
 export default class ApplicationAdapter extends JSONAPIAdapter {
   headers = {

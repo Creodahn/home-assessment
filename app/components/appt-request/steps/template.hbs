@@ -1,1 +1,5 @@
-{{yield}}
+<ol class="appt-request-step-list">
+  {{#each this.appointmentRequest.steps as |step|}}
+    <ApptRequest::Steps::Step @step={{step}} />
+  {{/each}}
+</ol>

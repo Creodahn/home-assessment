@@ -18,5 +18,4 @@ export default class OfficeModel extends Model {
   @attr('string') street;
 
   @attr('string') zip;
-
 }

@@ -1,1 +1,6 @@
-{{yield}}
+Available Services
+<ul>
+  {{#each services as |service|}}
+    <li>{{service.description}}</li>
+  {{/each}}
+</ul>

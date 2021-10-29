@@ -1,3 +1,5 @@
 import Component from '@glimmer/component';
-
-export default class ApptRequestStepsComponent extends Component {}
+import { inject as service } from '@ember/service';
+export default class ApptRequestStepsComponent extends Component {
+  @service appointmentRequest;
+}

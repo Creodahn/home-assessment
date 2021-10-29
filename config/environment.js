@@ -20,8 +20,14 @@ module.exports = function (environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      apiURL: 'https://johnny-appleseed.clientsecure.me'
+      apiURL: 'https://johnny-appleseed.clientsecure.me',
+      usingCors: false
     }
+  };
+
+  ENV.contentSecurityPolicy = {
+    'connect-src': `'self' https://johnny-appleseed.clientsecure.me`,
+    'default-src': '*'
   };
 
   if (environment === 'development') {
