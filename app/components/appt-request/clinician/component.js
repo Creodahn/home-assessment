@@ -6,9 +6,7 @@ export default class ApptRequestClinicianComponent extends Component {
   @service appointmentRequest;
 
   @action selectClinician() {
-    const currentStep = this.appointmentRequest.activeStep;
-
     this.appointmentRequest.updateStepExtraData('Johnny Appleseed');
-    this.appointmentRequest.updateActiveStep(currentStep + 1);
+    this.appointmentRequest.goToNextStep();
   }
 }

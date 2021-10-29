@@ -4,10 +4,10 @@ export default class ApptRequestStepsStepComponent extends Component {
   @service appointmentRequest;
 
   get isActiveStep() {
-    return this.args.step.id === this.appointmentRequest.activeStep;
+    return this.args.step.id === this.appointmentRequest.activeStep.toString();
   }
 
   get isCompletedStep() {
-    return this.args.step.id < this.appointmentRequest.activeStep;
+    return parseInt(this.args.step.id) < this.appointmentRequest.activeStep;
   }
 }

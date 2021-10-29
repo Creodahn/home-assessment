@@ -38,9 +38,11 @@
 
       & > .step-content {
         & > .extra-data {
-          display: block;
+          display: flex;
           color: #007f41;
           cursor: pointer;
+          // padding: 0;
+          white-space: pre-line;
         }
       }
     }

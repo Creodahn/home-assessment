@@ -1,6 +1,6 @@
 Available Services
 <ul>
   {{#each services as |service|}}
-    <li>{{service.description}}</li>
+    <ApptRequest::AvailableServices::Item @service={{service}} />
   {{/each}}
 </ul>

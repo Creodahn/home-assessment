@@ -7,7 +7,7 @@ import { action } from '@ember/object';
 export default class AppointmentRequestService extends Service {
   @service store;
 
-  @tracked _activeStep = 2;
+  @tracked _activeStep = 1;
 
   @tracked _clinicianId = 2;
 
@@ -17,29 +17,7 @@ export default class AppointmentRequestService extends Service {
 
   @tracked _serviceId;
 
-  @tracked _steps = [
-    {
-      id: 1,
-      extraData: 'Johnny Appleseed',
-      title: 'Clinician'
-    },
-    {
-      id: 2,
-      title: 'Select a Service'
-    },
-    {
-      id: 3,
-      title: 'Select a Location'
-    },
-    {
-      id: 4,
-      title: 'Select a Date & Time'
-    },
-    {
-      id: 5,
-      title: 'Your Information'
-    }
-  ];
+  @tracked _steps;
 
   get activeStep() {
     return this._activeStep;
@@ -55,6 +33,57 @@ export default class AppointmentRequestService extends Service {
 
   get steps() {
     return this._steps;
+  }
+
+  constructor() {
+    super(...arguments);
+
+    this.store.push({
+      data: [
+        {
+          id: 1,
+          type: 'step',
+          attributes: {
+            extraData: '',
+            title: 'Clinician'
+          }
+        },
+        {
+          id: 2,
+          type: 'step',
+          attributes: {
+            extraData: '',
+            title: 'Select a Service'
+          }
+        },
+        {
+          id: 3,
+          type: 'step',
+          attributes: {
+            extraData: '',
+            title: 'Select a Location'
+          }
+        },
+        {
+          id: 4,
+          type: 'step',
+          attributes: {
+            extraData: '',
+            title: 'Select a Date & Time'
+          }
+        },
+        {
+          id: 5,
+          type: 'step',
+          attributes: {
+            extraData: '',
+            title: 'Your Information'
+          }
+        }
+      ]
+    });
+
+    this._steps = this.store.peekAll('step');
   }
 
   async loadServices() {
@@ -86,6 +115,10 @@ export default class AppointmentRequestService extends Service {
     }
   }
 
+  @action goToNextStep() {
+    this._activeStep += 1;
+  }
+
   @action updateActiveStep(step) {
     this._activeStep = step;
   }
@@ -95,6 +128,8 @@ export default class AppointmentRequestService extends Service {
   }
 
   @action updateStepExtraData(data) {
-    this.steps.filter((step) => step.id === this.activeStep).extraData = data;
+    const stepToUpdate = this.store.peekRecord('step', this.activeStep);
+
+    stepToUpdate.extraData = data;
   }
 }

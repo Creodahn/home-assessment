@@ -1,1 +1,6 @@
 Offices
+<ul>
+  {{#each this.appointmentRequest.offices as |office|}}
+    <li>{{office.name}}</li>
+  {{/each}}
+</ul>
