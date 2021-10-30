@@ -35,13 +35,14 @@
 
     &.completed {
       &::before {
+        background-color: $green;
         content: '\2713';
       }
 
       & > .step-content {
         & > .extra-data {
           display: flex;
-          color: $green;
+          color: $blue;
           cursor: pointer;
           white-space: pre-line;
         }
