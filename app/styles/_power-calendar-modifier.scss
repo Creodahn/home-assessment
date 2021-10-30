@@ -1,0 +1,19 @@
+.ember-power-calendar {
+  background-color: $white;
+  border-radius: .5rem;
+  box-shadow: 0 .125rem .25rem 0 rgb(202 217 232 / 25%);
+  padding: 1rem;
+
+  .ember-power-calendar-day {
+    background-color: $light-gray;
+    border-radius: .25rem;
+    color: $very-dark-gray;
+    height: 4rem;
+    margin: .125rem;
+
+    &.ember-power-calendar-day--other-month {
+      background-color: $very-light-gray;
+      color: $light-gray;
+    }
+  }
+}
