@@ -1,6 +1,5 @@
-Offices
-<ul>
+<ul class="office-list">
   {{#each this.appointmentRequest.offices as |office|}}
-    <li>{{office.name}}</li>
+    <ApptRequest::Offices::Item @office={{office}} />
   {{/each}}
 </ul>

@@ -1,0 +1,19 @@
+.list {
+  flex-direction: column;
+
+  &,
+  & > .list-item {
+    display: flex;
+  }
+
+  & > .list-item {
+    align-items: center;
+    background-color: $white;
+    border-radius: .25rem;
+    justify-content: space-between;
+    flex: 1;
+    flex-direction: row;
+    margin-bottom: .5rem;
+    padding: .75rem;
+  }
+}

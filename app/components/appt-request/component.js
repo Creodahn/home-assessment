@@ -6,6 +6,8 @@ export default class ApptRequestComponent extends Component {
   get activeComponent() {
     let result;
 
+    console.log(this.appointmentRequest.activeStep);
+
     switch (this.appointmentRequest.activeStep) {
       case 1:
         result = 'appt-request/clinician';

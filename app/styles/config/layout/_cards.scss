@@ -1,0 +1,24 @@
+.card {
+  background-color: $white;
+  border-radius: .5rem;
+  overflow: hidden;
+  width: 17rem;
+
+  & > .card-content,
+  & > .card-footer {
+    margin: .6rem;
+  }
+
+  & > .card-footer {
+    display: flex;
+    justify-content: center;
+
+    & > .ui-btn {
+      width: 100%;
+    }
+  }
+
+  & > .card-header {
+    height: 11rem;
+  }
+}

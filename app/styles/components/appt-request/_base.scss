@@ -1,0 +1,23 @@
+.appt-request {
+  &-container {
+    display: flex;
+    flex-direction: row;
+
+    & > .appt-request-content {
+      background-color: $light-gray;
+      flex: 1;
+      padding: 1rem;
+    }
+  }
+
+  &-header {
+    border-bottom: 1px solid $light-gray;
+    border-top: 1px solid $light-gray;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  &-outer-container {
+    margin: 2rem;
+  }
+}

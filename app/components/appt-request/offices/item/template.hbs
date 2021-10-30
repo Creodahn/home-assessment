@@ -1,0 +1,28 @@
+<li class="office-card">
+  <header class="card-header {{if @office.isVideo "video-placeholder"}}">
+    
+  </header>
+  <div class="card-content">
+    <div class="office-name">
+      {{@office.name}}
+    </div>
+    {{#if @office.street}}
+      <div class="office-street">
+        {{@office.street}}
+      </div>
+    {{/if}}
+    {{#if this.cityStateZip}}
+      <div class="office-citystatezip">
+        {{this.cityStateZip}}
+      </div>
+    {{/if}}
+    <div class="office-phone">
+      {{@office.phone}}
+    </div>
+  </div>
+  <footer class="card-footer">
+    <Ui::Button @onClick={{fn this.selectOffice}}>
+      Select
+    </Ui::Button>
+  </footer>
+</li>

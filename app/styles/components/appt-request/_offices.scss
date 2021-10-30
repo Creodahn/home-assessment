@@ -1,0 +1,26 @@
+.office-list {
+  @extend .list;
+
+  flex-direction: row;
+
+  & > .office-card {
+    @extend .card;
+
+    & > .card-content {
+      & > .office-name {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: .5rem;
+      }
+    }
+
+    & > .card-header {
+      &.video-placeholder {
+        background-image: url('imgs/telehealth.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 150%;
+      }
+    }
+  }
+}

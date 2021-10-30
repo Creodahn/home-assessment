@@ -119,8 +119,8 @@ export default class AppointmentRequestService extends Service {
     this._activeStep += 1;
   }
 
-  @action updateActiveStep(step) {
-    this._activeStep = step;
+  @action goToStep(step) {
+    this._activeStep = parseInt(step);
   }
 
   @action updateSelectedService(serviceId) {

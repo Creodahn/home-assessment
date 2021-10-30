@@ -1,7 +1,11 @@
-<div class="appt-request-container">
-  <ApptRequest::Steps />
-  <div class="appt-request-content">
-    {{!-- content goes here based on current step --}}
-    {{component this.activeComponent}}
+<div class="appt-request-outer-container">
+  <header class="appt-request-header">
+    Request an Appointment
+  </header>
+  <div class="appt-request-container">
+    <ApptRequest::Steps />
+    <div class="appt-request-content">
+      {{component this.activeComponent}}
+    </div>
   </div>
 </div>
